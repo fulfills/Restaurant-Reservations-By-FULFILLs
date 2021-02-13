@@ -17,3 +17,17 @@
     background-color: #FFFFFF;
     min-height: 100px;
 }
+
+#rerebf-status > div.calendar > div.table > div.label
+{
+    min-height: unset;
+    padding: 15px;
+    background-color: #66cc99;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+#rerebf-status > div.calendar > div.table > div.blank
+{
+    background-color: #DDDDDD;
+}

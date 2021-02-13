@@ -19,7 +19,7 @@
     <?php foreach($day_label as $label):?>
     <div class="label"><?php echo $label;?></div>
     <?php endforeach;?>
-    <?php for($i = 0; $i < intval(wp_date('w', $rerebf_time[0])); $i++) echo '<div></div>'; // 開始曜日の調整 ?>
+    <?php for($i = 0; $i < intval(wp_date('w', $rerebf_time[0])); $i++) echo '<div class="blank"></div>'; // 開始曜日の調整 ?>
     <?php for($day = 1; $day <= intval(wp_date('d', $rerebf_time[1])); $day++):?>
         <div class="active">
             <?php echo $day;?>
