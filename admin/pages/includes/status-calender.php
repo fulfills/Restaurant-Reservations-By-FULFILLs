@@ -25,5 +25,6 @@
             <?php echo $day;?>
         </div>
     <?php endfor;?>
+    <?php for($i = intval(wp_date('w', $rerebf_time[1])) + 1; $i < 7; $i++) echo '<div class="blank"></div>'; // 終了曜日の調整 ?>
 </div>
 <?php endforeach;
