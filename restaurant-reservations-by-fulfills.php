@@ -43,24 +43,7 @@ include 'admin/pages/display.php';
 // CSS
 include 'admin/css/core.php';
 
-// // Other Settings Function
-// include 'pages/other-settings/edit.php';
-
-// // CSS出力
-// include 'php/css.php';
-
-// // JS出力
-// include 'php/js.php';
-
-// // ショートコード 出力
-// include 'shortcode/shortcode.php';
-
-// // 投稿タイプ
-// include 'php/post_type.php';
-
-// // Add Admin Bar Menu
-// include 'php/admin-bar.php';
-
+// Add Pages to WordPress Admin
 function cfbf_add_pages() {
     global $CFBF_MAIN_SLUG;
     $cfbfs_cap = (get_option('cfbf_other')['permission-author'] ? 'publish_posts' : 'edit_pages');  // ページ表示権限
