@@ -1,0 +1,19 @@
+@charset "utf-8";
+
+#rerebf-status *
+{
+    box-sizing: border-box;
+}
+
+#rerebf-status > div.calendar > div.table {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#rerebf-status > div.calendar > div.table > div {
+    width: 13.88%;
+    margin: 0.2%;
+    padding: 10px;
+    background-color: #FFFFFF;
+    min-height: 100px;
+}

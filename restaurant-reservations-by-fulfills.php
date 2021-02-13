@@ -25,17 +25,23 @@ function rerebf_sanitize_for_array($obj, $is_textarea = 0) {
 
 load_plugin_textdomain('restaurant-reservations-by-fulfills');
 
+######################
+### 管理ページ
+######################
 // About Function
-include 'admin/about.php';
+include 'admin/pages/about.php';
 
 // Status Function
-include 'admin/status.php';
+include 'admin/pages/status.php';
 
 // Restaurant Setting Function
-include 'admin/restaurant.php';
+include 'admin/pages/restaurant.php';
 
 // Display Setting Function
-include 'admin/display.php';
+include 'admin/pages/display.php';
+
+// CSS
+include 'admin/css/core.php';
 
 // // Other Settings Function
 // include 'pages/other-settings/edit.php';
@@ -58,10 +64,10 @@ include 'admin/display.php';
 function cfbf_add_pages() {
     global $CFBF_MAIN_SLUG;
     $cfbfs_cap = (get_option('cfbf_other')['permission-author'] ? 'publish_posts' : 'edit_pages');  // ページ表示権限
-    add_menu_page( 'page_title', __('Reservations', 'rerebf'), $cfbfs_cap, $CFBF_MAIN_SLUG, 'cfbf_addpage_about', 'dashicons-carrot', 8);
-    add_submenu_page( $CFBF_MAIN_SLUG, __('About Us', 'rerebf'), __('About Us', 'rerebf'), $cfbfs_cap, $CFBF_MAIN_SLUG, 'cfbf_addpage_about' );
-    add_submenu_page( $CFBF_MAIN_SLUG, __('Status', 'rerebf'), __('Status', 'rerebf'), $cfbfs_cap, $CFBF_MAIN_SLUG.'-status', 'cfbf_addpage_status' );
-    add_submenu_page( $CFBF_MAIN_SLUG, __('Restaurant Setting', 'rerebf'), __('Restaurant Setting', 'rerebf'), 'edit_pages', $CFBF_MAIN_SLUG.'-restaurant', 'cfbf_addpage_restaurant' );
-    add_submenu_page( $CFBF_MAIN_SLUG, __('Display Setting', 'rerebf'), __('Display Setting', 'rerebf'), 'edit_pages', $CFBF_MAIN_SLUG.'-display', 'cfbf_addpage_display' );
+    add_menu_page( 'page_title', __('Reservations', 'rerebf'), $cfbfs_cap, $CFBF_MAIN_SLUG, 'rerebf_addpage_about', 'dashicons-carrot', 8);
+    add_submenu_page( $CFBF_MAIN_SLUG, __('About Us', 'rerebf'), __('About Us', 'rerebf'), $cfbfs_cap, $CFBF_MAIN_SLUG, 'rerebf_addpage_about' );
+    add_submenu_page( $CFBF_MAIN_SLUG, __('Status', 'rerebf'), __('Status', 'rerebf'), $cfbfs_cap, $CFBF_MAIN_SLUG.'-status', 'rerebf_addpage_status' );
+    add_submenu_page( $CFBF_MAIN_SLUG, __('Restaurant Setting', 'rerebf'), __('Restaurant Setting', 'rerebf'), 'edit_pages', $CFBF_MAIN_SLUG.'-restaurant', 'rerebf_addpage_restaurant' );
+    add_submenu_page( $CFBF_MAIN_SLUG, __('Display Setting', 'rerebf'), __('Display Setting', 'rerebf'), 'edit_pages', $CFBF_MAIN_SLUG.'-display', 'rerebf_addpage_display' );
 }
 add_action('admin_menu', 'cfbf_add_pages');
