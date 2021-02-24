@@ -45,8 +45,14 @@ include 'admin/pages/restaurant.php';
 // Display Setting Function
 include 'admin/pages/display.php';
 
+// AJAX
+include 'admin/ajax/core.php';
+
 // CSS
 include 'admin/css/core.php';
+
+// JS
+include 'admin/js/core.php';
 
 // Add Pages to WordPress Admin
 function cfbf_add_pages() {
