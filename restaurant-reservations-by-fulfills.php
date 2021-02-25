@@ -28,6 +28,11 @@ function rerebf_sanitize_for_array($obj, $is_textarea = 0) {
     return sanitize_text_field($obj);
 }
 
+// include
+function rerebf_include($path) {
+    include $path;
+}
+
 load_plugin_textdomain('restaurant-reservations-by-fulfills');
 
 ######################
