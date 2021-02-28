@@ -38,6 +38,7 @@
 #rerebf-status > form.calendar > div.table > div > label.is_open {
     display: block;
     height: 25px;
+    margin: 3px 0 0 0;
     text-align: center;
 }
 
@@ -59,18 +60,29 @@
     line-height: 25px;
 }
 
-#rerebf-status > form.calendar > div.table > div > label.is_open > input[type="checkbox"] ~ span.open {
+#rerebf-status > form.calendar > div.table > div > label.is_open > input[type="radio"] ~ span.open {
     display: none;
 }
 
-#rerebf-status > form.calendar > div.table > div > label.is_open > input[type="checkbox"] ~ span.close {
+#rerebf-status > form.calendar > div.table > div > label.is_open > input[type="radio"] ~ span.close {
     display: block;
 }
 
-#rerebf-status > form.calendar > div.table > div > label.is_open > input[type="checkbox"]:checked ~ span.open {
+#rerebf-status > form.calendar > div.table > div > label.is_open > input[type="radio"]:checked ~ span.open {
     display: block;
 }
 
-#rerebf-status > form.calendar > div.table > div > label.is_open > input[type="checkbox"]:checked ~ span.close {
+#rerebf-status > form.calendar > div.table > div > label.is_open > input[type="radio"]:checked ~ span.close {
     display: none;
+}
+
+#rerebf-status > form.calendar > div.table > div > a.check {
+    display: block;
+    margin: 5px 0 0 0;
+    padding: 6px;
+    text-align: center;
+    line-height: 1;
+    background-color: #000000;
+    color: #FFFFFF;
+    text-decoration: none;
 }

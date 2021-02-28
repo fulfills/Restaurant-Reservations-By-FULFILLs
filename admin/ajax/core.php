@@ -7,6 +7,9 @@
 			case 'status':
 				include 'status.php';
 				break;
+			case 'restaurant':
+				include 'restaurant.php';
+				break;
 			default:
 				;
 		}

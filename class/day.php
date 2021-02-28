@@ -49,6 +49,10 @@
             $this->exist_flag = true;
             return $GLOBALS['wpdb']->replace("{$GLOBALS['wpdb']->prefix}rerebf_day", $this->data, '%d');
         }
+
+        public function get($data_name) {
+            return intval($this->data[$data_name]);
+        }
     }
 
     

@@ -34,12 +34,16 @@
                 <div class="date"><?php echo $d;?></div>
                 <label class="is_open">
                     <?php if(!$day->data['is_open']):?>
-                        <input type="checkbox" name="<?php echo sprintf('%04d', $y).sprintf('%02d', $m).sprintf('%02d', $d);?>" value="1">
+                        <input type="radio" name="<?php echo sprintf('%04d', $y).sprintf('%02d', $m).sprintf('%02d', $d);?>" value="1">
                     <?php endif;?>
                     <span class="open">OPEN</span>
                     <span class="close">CLOSED</span>
                 </label>
-                <?php // var_dump($day);?>
+                <?php if($day->data['is_open']):?>
+                <a href="<?php echo admin_url("admin.php?page=restaurant-reservations-by-fulfills-status&y={$y}&m={$m}&d={$d}");?>" class="check">
+                    予約状況を確認する
+                </a>
+                <?php endif;?>
             </div>
         <?php endfor;?>
         <?php for($i = intval(wp_date('w', $rerebf_time[1])) + 1; $i < 7; $i++) echo '<div class="blank"></div>'; // 終了曜日の調整 ?>

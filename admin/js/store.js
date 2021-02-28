@@ -29,7 +29,13 @@
             setTimeout(function(){
                 $this_submit.val('変更を保存する')
             },3000);
-            console.log(data);
+        })
+        .fail(function(){
+            window.alert('保存に失敗しました。ページをリロードしてください。');
+            $this_submit.val('保存に失敗しました');
+            setTimeout(function(){
+                $this_submit.val('変更を保存する')
+            },3000);
         });
 
         return false;
