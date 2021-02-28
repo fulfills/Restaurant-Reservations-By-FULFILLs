@@ -9,12 +9,15 @@
                 month int NOT NULL,
                 day int NOT NULL,
                 is_open int,
-                open_time int,
-                close_time int,
+                open_time float,
+                close_time float,
                 PRIMARY KEY(year, month, day)
             )
         ");
     }
+
+    global $op_restaurant_setting;
+    $op_restaurant_setting = get_option('rerebf_restaurant');
 
     class rerebfDay {
         public $data = [
@@ -47,10 +50,11 @@
 
         public function write() {
             $this->exist_flag = true;
-            return $GLOBALS['wpdb']->replace("{$GLOBALS['wpdb']->prefix}rerebf_day", $this->data, '%d');
+            return $GLOBALS['wpdb']->replace("{$GLOBALS['wpdb']->prefix}rerebf_day", $this->data, ['%d','%d','%d','%d','%f','%f']);
         }
 
         public function get($data_name) {
+            if(in_array($data_name, ['open_time', 'close_time'])) return floatval($this->data[$data_name]);
             return intval($this->data[$data_name]);
         }
     }

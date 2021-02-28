@@ -3,6 +3,7 @@
 
     // トップページ
     function rerebf_addpage_restaurant() {
+        $op = get_option('rerebf_restaurant', []);
 ?>
         <div class="wrap" id="rerebf-restaurant">
             <h1><?php _e('Restaurant Setting', 'rerebf');?> - Restaurant Reservations By FULFILLs</h1>
@@ -12,7 +13,7 @@
                     <tr>
                         <th>営業開始時間【デフォルト】</th>
                         <td>
-                            <select name="open" style="width: 100px;">
+                            <select name="open_time" style="width: 100px;">
                                 <?php for($i = 0; $i <= 48; $i++):?>
                                 <option value="<?php echo ($i / 2);?>" <?php if($op['open_time'] == ($i / 2)) echo 'selected'?>>
                                     <?php echo sprintf('%02d', intval($i / 2)).':'.sprintf('%02d', ($i % 2)*30);?>
@@ -24,7 +25,7 @@
                     <tr>
                         <th>営業終了時間【デフォルト】</th>
                         <td>
-                            <select name="close" style="width: 100px;">
+                            <select name="close_time" style="width: 100px;">
                                 <?php for($i = 0; $i <= 48; $i++):?>
                                 <option value="<?php echo ($i / 2);?>" <?php if($op['close_time'] == ($i / 2)) echo 'selected'?>>
                                     <?php echo sprintf('%02d', intval($i / 2)).':'.sprintf('%02d', ($i % 2)*30);?>

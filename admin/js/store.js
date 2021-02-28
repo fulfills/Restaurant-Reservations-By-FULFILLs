@@ -25,10 +25,16 @@
             }
         })
         .done( (data) => {
-            $this_submit.val('保存しました');
-            setTimeout(function(){
+            if(data === '') {
+                $this_submit.val('保存しました');
+                setTimeout(function(){
+                    $this_submit.val('変更を保存する')
+                },3000);
+            }
+            else {
+                window.alert(data);
                 $this_submit.val('変更を保存する')
-            },3000);
+            }
         })
         .fail(function(){
             window.alert('保存に失敗しました。ページをリロードしてください。');

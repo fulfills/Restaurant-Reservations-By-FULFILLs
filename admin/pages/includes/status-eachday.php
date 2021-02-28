@@ -5,7 +5,7 @@
     $d = intval($_GET['d']);
     $day = new rerebfDay($y, $m, $d);
     if($day->data['is_open']):
-        var_dump($day);
+        // var_dump($day);
 ?>
 
 <form class="calendar rerebf-store" rerebf="eachday">
