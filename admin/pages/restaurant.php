@@ -35,8 +35,15 @@
                         </td>
                     </tr>
                 </table>
-
-                <input type="submit" class="button button-primary rerebf-store" value="変更を保存する">
+                <input type="submit" class="button button-primary rerebf-store" value="営業時間を保存する">
+            </form>
+            <form class="rerebf-store" rerebf="seats">
+                <h3>座席</h3>
+                <p>予約できる座席を追加してください。</p>
+                <div class="outer">
+                    <button type="button" class="plus">+ 新しく追加する</button>
+                </div>
+                <input type="submit" class="button button-primary rerebf-store" value="座席を保存する">
             </form>
         </div>
 <?php
