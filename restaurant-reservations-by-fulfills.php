@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 $CFBF_MAIN_SLUG = 'restaurant-reservations-by-fulfills';
 
 // クラス定義
-// include 'class/seat.php';
+include 'class/seat.php';
 // include 'class/reserve.php';
 include 'class/day.php';
 
