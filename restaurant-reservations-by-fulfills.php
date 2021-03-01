@@ -62,11 +62,13 @@ include 'admin/js/core.php';
 // Add Pages to WordPress Admin
 function cfbf_add_pages() {
     global $CFBF_MAIN_SLUG;
-    $cfbfs_cap = (get_option('cfbf_other')['permission-author'] ? 'publish_posts' : 'edit_pages');  // ページ表示権限
+    $cfbfs_cap = 'edit_pages';  // ページ表示権限
     add_menu_page( 'page_title', __('Reservations', 'rerebf'), $cfbfs_cap, $CFBF_MAIN_SLUG, 'rerebf_addpage_about', 'dashicons-carrot', 8);
     add_submenu_page( $CFBF_MAIN_SLUG, __('About Us', 'rerebf'), __('About Us', 'rerebf'), $cfbfs_cap, $CFBF_MAIN_SLUG, 'rerebf_addpage_about' );
-    add_submenu_page( $CFBF_MAIN_SLUG, __('Status', 'rerebf'), __('Status', 'rerebf'), $cfbfs_cap, $CFBF_MAIN_SLUG.'-status', 'rerebf_addpage_status' );
     add_submenu_page( $CFBF_MAIN_SLUG, __('Restaurant Setting', 'rerebf'), __('Restaurant Setting', 'rerebf'), 'edit_pages', $CFBF_MAIN_SLUG.'-restaurant', 'rerebf_addpage_restaurant' );
-    add_submenu_page( $CFBF_MAIN_SLUG, __('Display Setting', 'rerebf'), __('Display Setting', 'rerebf'), 'edit_pages', $CFBF_MAIN_SLUG.'-display', 'rerebf_addpage_display' );
+    if(get_option('rerebf_restaurant', [])) {
+        add_submenu_page( $CFBF_MAIN_SLUG, __('Status', 'rerebf'), __('Status', 'rerebf'), $cfbfs_cap, $CFBF_MAIN_SLUG.'-status', 'rerebf_addpage_status' );
+        add_submenu_page( $CFBF_MAIN_SLUG, __('Display Setting', 'rerebf'), __('Display Setting', 'rerebf'), 'edit_pages', $CFBF_MAIN_SLUG.'-display', 'rerebf_addpage_display' );
+    }
 }
 add_action('admin_menu', 'cfbf_add_pages');
